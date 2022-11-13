@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+keycloak:
+  realm: DsAuth
+  auth-server-url: http://localhost:8180/auth
+  resource: ds_backend
+  public-client: true
+  bearer-only: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demodb
+    username: root
+    password:
+    hikari:
+      initialization-fail-timeout: 0
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
